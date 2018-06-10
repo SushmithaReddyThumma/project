@@ -1,0 +1,212 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="./register"><h4>Home</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./register"><h4>About</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./register"><h4>Profile</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./register"><h4>Vendor Sheet</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./register"><h4>Contact Us</h4></a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><a href="./register"><h2>Personal Information</h2></a></li>
+    <li class="active"><a data-toggle="tab" href="./edu"><h2>Educational Information</h2></a></li>
+    <li><a href="./immigration"><h2>Immigration Information</h2></a></li>
+    <li><a href="./work"><h2>Work Experience</h2></a></li>
+  </ul>
+  <form #f="ngForm"
+        (ngSubmit)="onSubmit(f.value)"
+        class="ui form">
+
+    <div>
+      
+      <table>
+      <br>
+        <tr>
+          <td><label for="deg"><h3>Degree</h3></label>  </td>
+          <td>
+            <input type="text"
+                   id="deg"
+                   name="deg" ngModel>
+          </td>
+        </tr>
+        <br />
+        <tr>
+          <td> <label for="univ"><h3>University</h3></label>  </td>
+          <td>
+            <input type="text"
+                   id="univ"
+                   name="univ" ngModel>
+          </td>
+        </tr>
+        <br />
+        <tr>
+
+        <tr>
+          <td> <label for="mak"><h3>Major</h3></label>  </td>
+          <td>
+            <input type="text"
+                   id="maj"
+                   name="maj" ngModel>
+          </td>
+        </tr>
+        <br />
+        <tr>
+
+        <tr>
+          <td> <label><h3>Start Date:</h3></label><br></td>
+          <td> <input id="start" [(ngModel)]="from" type="date" name="start" ngModel></td>
+
+        </tr>
+        <br />
+        <tr>
+        <tr>
+          <td> <label><h3>End Date:</h3></label><br></td>
+          <td>    <input id="end" [(ngModel)]="to" type="date" name="end" ngModel></td>
+
+        </tr>
+        <br />
+        <tr>
+        <tr>
+          <td>
+            <label for="gpa"><h3>GPA</h3></label>
+          </td>
+          <td>
+            <input type="text"
+                   id="gpa"
+                   name="gpa" ngModel>
+          </td>
+        </tr>
+        <br />
+        <tr>
+
+      </table> <br />
+      <tr>
+
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit(f.value)">
+          <div formArrayName="itemRows">
+
+            <div *ngFor="let itemrow of addForm.controls.itemRows.controls; let i=index" [formGroupName]="i">
+
+
+              <table>
+                <tr>
+                  <td><label for="deg">Degree</label>  </td>
+                  <td>
+                    <input type="text"
+                           id="deg"
+                           name="deg" ngModel>
+                  </td>
+                </tr>
+                <br />
+                <tr>
+                  <td> <label for="univ">University</label>  </td>
+                  <td>
+                    <input type="text"
+                           id="univ"
+                           name="univ" ngModel>
+                  </td>
+                </tr>
+                <br />
+                <tr>
+
+                <tr>
+                  <td> <label for="mak">Major</label>  </td>
+                  <td>
+                    <input type="text"
+                           id="maj"
+                           name="maj" ngModel>
+                  </td>
+                </tr>
+                <br />
+                <tr>
+
+                <tr>
+                  <td> <label>Start</label><br></td>
+                  <td> <input id="start" [(ngModel)]="from" type="date" name="start" ngModel></td>
+
+                </tr>
+                <br />
+                <tr>
+                <tr>
+                  <td> <label>End</label><br></td>
+                  <td>    <input id="end" [(ngModel)]="to" type="date" name="end" ngModel></td>
+
+                </tr>
+                <br />
+                <tr>
+                <tr>
+                  <td>
+                    <label for="gpa">GPA</label>
+                  </td>
+                  <td>
+                    <input type="text"
+                           id="gpa"
+                           name="gpa" ngModel>
+                  </td>
+                </tr>
+                <br />
+                <tr>
+
+              </table> <br />
+
+              <button type="button" (click)="deleteRow()" class="btn btn-primary">Delete Entry</button>
+            </div>
+          </div>
+          <button type="button" (click)="addNewRow()" class="btn btn-primary">Add Entry</button>
+        </form>
+        <br >
+
+    </div>
+  </form>
+
+
+  <div align="right">
+    <a href="./register">
+      <button id="button" type="button" class="btn btn-info" >Back</button>
+    </a>
+
+
+    <a>
+
+      <button id="btn-signup" type="button" class="btn btn-info">Save</button>
+
+    </a>
+
+    <a href="./immigration">
+
+
+      <button id="button" type="button" class="btn btn-info" >Next</button>
+
+
+    </a>
+  </div>
+
+
+    <style>
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: blue;
+        text-align: center;
+      }
+    </style>
+    <div class="footer">
+  <p>Add copyright policy</p>
+</div>

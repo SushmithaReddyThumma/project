@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Vendor Sheet</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+    </ul>
+  </nav>  
+<h3>Vendor Sheet Management</h3>
+<h4>Welcome {{loggedUsedData.Candidate[0].demographic.name.firstName}}</h4>
+
+
+
+<div class="jumbotron">
+  <h5><u><b>Your details:</b></u></h5>
+    <h5><b>Email:</b> {{loggedUsedData.Candidate[0].EmailID}}</h5>
+    <h5><b>First Name:</b> {{loggedUsedData.Candidate[0].demographic.name.firstName}}</h5>
+    <h5><b>Last Name:</b> {{loggedUsedData.Candidate[0].demographic.name.lastName}}</h5>
+    <h5><b>DOB:</b> {{loggedUsedData.Candidate[0].demographic.dateOfBirth}}</h5>
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: white;
+   color: blue;
+   text-align: center;
+}
+</style>
+<div class="footer">
+		<p>Add copyright policy</p>
+	</div>
+

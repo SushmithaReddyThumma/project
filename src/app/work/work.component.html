@@ -1,0 +1,196 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+       <a class="nav-link" href="./register"><h4>Home</h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./register"><h4>About</h4></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./register"><h4>Profile</h4></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="./register"><h4>Vendor Sheet</h4></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./register"><h4>Contact Us</h4></a>
+          </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><a href="./register"><h2>Personal Information</h2></a></li>
+    <li><a href="./edu"><h2>Educational Information</h2></a></li>
+    <li><a href="./immigration"><h2>Immigration Information</h2></a></li>
+    <li class="active"><a href="./work"><h2>Work Experience</h2></a></li>
+  </ul>
+  <br >
+  <form #f="ngForm"
+        class="ui form">
+    <table>
+      <tr>
+        <td><label for="title"><h3>Title</h3></label>  </td>
+        <td>
+          <input type="text"
+                 id="title"
+                 name="title" ngModel>
+        </td>
+      </tr>
+      <br />
+
+      <tr>
+        <td><label for="title"><h3>Company</h3></label>  </td>
+        <td>
+          <input type="text"
+                 id="comp"
+                 name="comp" ngModel>
+        </td>
+      </tr>
+      <br />
+
+      <tr>
+        <td><label for="title"><h3>Location </h3></label>  </td>
+        <td>
+          <input type="text"
+                 id="loc"
+                 name="loc" ngModel>
+        </td>
+      </tr>
+      <br />
+      <tr>
+        <td>  <label><h3>From Date: </h3></label><br></td>
+        <td> <input id="dob" [(ngModel)]="from" type="date" name="from" ngModel></td>
+
+      </tr>
+      <br />
+      <tr>
+        <td>  <label><h3>To Date: </h3></label><br></td>
+        <td> <input id="dob" [(ngModel)]="to" type="date" name="to" ngModel></td>
+
+      </tr>
+      <tr>
+        <label for="ex3"><h3>Are you currently working here</h3></label>
+        <br>
+        <label class="radio-inline">
+          <input type="radio" name="survey" id="Radios1" value="Yes" ngModel>
+          Yes
+        </label>
+        <label class="radio-inline">
+
+          <input type="radio" name="survey" id="Radios2" value="No" ngModel>
+
+          No
+        </label>
+      </tr>
+      <br />
+    </table><br />
+    <form [formGroup]="addForm">
+      <div formArrayName="itemRows">
+
+        <div *ngFor="let itemrow of addForm.controls.itemRows.controls; let i=index" [formGroupName]="i">
+
+
+          <table>
+            <tr>
+              <td><label for="title">Title </label>  </td>
+              <td>
+                <input type="text"
+                       id="title"
+                       name="title" ngModel>
+              </td>
+            </tr>
+            <br />
+
+            <tr>
+              <td><label for="title">Company </label>  </td>
+              <td>
+                <input type="text"
+                       id="comp"
+                       name="comp" ngModel>
+              </td>
+            </tr>
+            <br />
+
+            <tr>
+              <td><label for="title">Location </label>  </td>
+              <td>
+                <input type="text"
+                       id="loc"
+                       name="loc" ngModel>
+              </td>
+            </tr>
+            <br />
+            <tr>
+              <td>  <label>From</label><br></td>
+              <td> <input id="dob" [(ngModel)]="from" type="date" name="from" ngModel></td>
+
+            </tr>
+            <br />
+            <tr>
+              <td>  <label>To</label><br></td>
+              <td> <input id="dob" [(ngModel)]="to" type="date" name="to" ngModel></td>
+
+            </tr>
+            <tr>
+              <label for="ex3">Are you currently working here</label>
+              <br>
+              <label class="radio-inline">
+                <input type="radio" name="survey" id="Radios1" value="Yes" ngModel>
+                Yes
+              </label>
+              <label class="radio-inline">
+
+                <input type="radio" name="survey" id="Radios2" value="No" ngModel>
+
+                No
+              </label>
+            </tr>
+            <br />
+          </table><br />
+
+         
+          <button type="button" (click)="deleteRow()" class="btn btn-primary">Delete Entry</button>
+        </div>
+      </div>
+      <button type="button" (click)="addNewRow()" class="btn btn-primary">Add Entry</button>
+    </form>
+
+
+    <div align="right">
+      <a href="./immigration">
+        <button id="button" type="button" class="btn btn-info">Back</button>
+      </a>
+
+
+      <a>
+
+        <button id="btn-signup" type="button" class="btn btn-info">Save</button>
+
+      </a>
+      <a href="./login">
+        <button id="button" type="button" class="btn btn-info">submit</button>
+
+
+      </a>
+    </div>
+
+
+
+    <style>
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: blue;
+        text-align: center;
+      }
+    </style>
+    <div class="footer">
+      <p>Add copyright policy</p>
+    </div>

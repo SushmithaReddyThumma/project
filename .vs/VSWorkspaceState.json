@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\edu",
+    "\\src\\app\\immigration",
+    "\\src\\app\\login",
+    "\\src\\app\\register",
+    "\\src\\app\\work"
+  ],
+  "SelectedNode": "\\src\\app\\edu\\edu.component.css",
+  "PreviewInSolutionExplorer": false
+}
