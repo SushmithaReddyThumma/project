@@ -7,7 +7,8 @@ import { FormBuilder, FormControl, FormArray, FormGroup } from '@angular/forms';
   styleUrls: ['./edu.component.css']
 })
 export class EduComponent implements OnInit {
-
+ 
+ 
   
 
   addForm: FormGroup;
@@ -42,6 +43,11 @@ deleteRow(index: number) {
     const control = <FormArray>this.addForm.controls['itemRows'];
     control.removeAt(index);
 }
+
+  onSubmit(form: any): void {
+    console.log('you submitted value:', form);
+
+  }
 
   ngOnInit(){
 

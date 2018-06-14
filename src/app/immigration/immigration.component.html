@@ -1,93 +1,211 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 <nav class="navbar navbar-expand-sm bg-light">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="./register"><h4>Home</h4></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./register"><h4>About</h4></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./register"><h4>Profile</h4></a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="./register"><h4>Vendor Sheet</h4></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./register"><h4>Contact Us</h4></a>
-          </li>
-    </ul>
-  </nav> 
-<div class="container">
-  <ul class="nav nav-tabs">
-    <li><a href="./register"><h2>Personal Information</h2></a></li>
-    <li><a href="./edu"><h2>Educational Information</h2></a></li>
-    <li class="active"><a href="./immigration"><h2>Immigration Information</h2></a></li>
-    <li><a href="./work"><h2>Work Experience</h2></a></li>
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+
+      <div align="center">  <a class="nav-link" href="./about"><h1>Egaints</h1> </a></div>
+
+    </li>
+
   </ul>
-  <table>
-    <br >
-    <tr>
-      <label><h3>Visa Status</h3></label>
-      <br>
-      <input class="form-control" id="ex3" type="text">
-    </tr>
-
-    <tr>
-      <label><h3>SSN</h3></label>
-      <br>
-      <input class="form-control" id="ex3" type="text">
-    </tr>
-
-    <tr>
-      <label><h3>Passport Number</h3></label>
-      <br>
-      <input class="form-control" id="ex3" type="text">
-    </tr>
-    <br>
-    <tr>
-      <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
-                    accept="image/*" auto="auto"></p-fileUpload>
-
-    </tr>
-  </table>
-
-  <div align="right">
-    <a href="./edu">
-      <button id="button" type="button" class="btn btn-info">Back</button>
-    </a>
+</nav>
 
 
-    <a>
-
-      <button id="btn-signup" type="button" class="btn btn-info">Save</button>
-
-    </a>
-
-    <a href="./work">
+<div class="container">
 
 
-      <button id="button" type="button" class="btn btn-info">Next</button>
+  <ul class="nav nav-tabs nav-pills">
+    <li><a><h2>Personal Information</h2></a></li>
+    <li><a href="./edu"><h2>Educational Information</h2></a></li>
+    <li class="active"><a a data-toggle="tab" href="./immigration"><h2>Immigration Information</h2></a></li>
+    <li><a><h2>Work Experience</h2></a></li>
+  </ul>
+
+  <h3 align="left" class="col-sm-3 form-group">Immigration Details</h3>
+
+  <div class="container">
+    <div class="col-lg-12 well">
+      <div class="row">
+        <form #f="ngForm">
+
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Country of Birth</label>
+                <div>
+                  <select name="" ngModel>
+                    <option *ngFor="let emp of countries">
+
+                      {{ emp }}
+                    </option>
+                  </select>
+
+                </div>
+
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Passport Expiry Date</label>
+                <input type="date" placeholder="date of Birth" class="form-control" name="Dob" ngModel>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Passport Country of Issuance</label>
+                <div>
+                  <select name="" ngModel>
+                    <option *ngFor="let emp of countries">
+
+                      {{ emp }}
+                    </option>
+                  </select>
+
+                </div>
+
+              </div>
+
+              <div class="col-sm-6 form-group">
+                <label>I94 Number</label>
+                <input type="number" placeholder="" class="form-control" name="I94" ngModel>
+              </div>
+
+              <div class="col-sm-6 form-group">
+                <label>Current Status</label>
+                <input type="text" placeholder="" class="form-control" name="Status" ngModel>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Current Status Validity</label>
+                <input type="text" placeholder="" class="form-control" name="Validity" ngModel>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>OPT Start Date</label>
+                <input type="date" placeholder="OPT Start Date" class="form-control" name="Date" ngModel>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>OPT End Date</label>
+                <input type="date" placeholder="OPT End Date" class="form-control" name="Date" ngModel>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>H1B Start Date</label>
+                <input type="date" placeholder="H1B Start Date" class="form-control" name="Date" ngModel>
+              </div>
+
+              <div class="col-sm-6 form-group">
+                <label>H1B End Date</label>
+                <input type="date" placeholder="H1B End Date" class="form-control" name="Date" ngModel>
+              </div>
+
+              <div class="col-sm-3 form-group">
+                <label>
+                  Upload Passport
+                </label>
+                <input type="file" placeholder="Passport" class="form-control">
+              </div>
+              <div class="col-sm-3 form-group">
+                <label>
+                  Upload US Visa
+                </label>
+                <input type="file" placeholder="Us Visa" class="form-control">
+              </div>
+              <div class="col-sm-3 form-group">
+                <label></label>
+              </div>
+              <div class="col-sm-3 form-group">
+                <label></label>
+              </div>
+              <div class="col-sm-3 form-group">
+                <label>
+                  Upload I94 Documents
+                </label>
+                <input type="file" placeholder="I94" class="form-control">
+              </div>
+              <div class="col-sm-3 form-group">
+                <label>
+                  Upload All I20s
+                </label>
+                <input type="file" placeholder="I20" class="form-control">
+              </div>
+              <div class="col-sm-3 form-group">
+                <label></label>
+              </div>
+              <div class="col-sm-3 form-group">
+                <label></label>
+              </div>
+              <div class="col-sm-3 form-group">
+                <label>
+                  Upload Previous I797
+                </label>
+                <input type="file" placeholder="I797" class="form-control">
+              </div>
+
+            </div>
+          </div>
+        </form>
 
 
-    </a>
+
+
+
+      </div>
+    </div>
+
+
+
+
   </div>
 
+  <div class="container">
+    <div class="col-lg-12 well">
+      <div class="row">
+        <form #f="ngForm">
+          <div align="right">
+            <a href="./edu">
+              <button id="button" type="button" class="btn btn-info">Back</button>
+            </a>
 
 
-  <style>
+            <a>
 
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: white;
-      color: blue;
-      text-align: center;
-    }
-  </style>
-  <div class="footer">
-    <p>Add copyright policy</p>
-  </div>
+              <button type="submit" class="ui button" (click)="onSubmit(f.value)">Save</button>
+
+            </a>
+
+            <a href="./work">
+
+
+              <button id="button" type="button" class="btn btn-info">Next</button>
+
+
+            </a>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <style>
+
+          .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: blue;
+            text-align: center;
+          }
+        </style>
+        <div class="footer">
+          <p>Add copyright policy</p>
+        </div>

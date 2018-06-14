@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
 
-  
+
+  export class RegisterComponent implements OnInit {
+  onSubmit(form: any): void {  
+    console.log('you submitted value:', form);
+
+   }
 
   ngOnInit() {
   }

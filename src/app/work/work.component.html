@@ -1,196 +1,134 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 <nav class="navbar navbar-expand-sm bg-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-       <a class="nav-link" href="./register"><h4>Home</h4></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./register"><h4>About</h4></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./register"><h4>Profile</h4></a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="./register"><h4>Vendor Sheet</h4></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./register"><h4>Contact Us</h4></a>
-          </li>
-  </ul>
+<ul class="navbar-nav">
+
+  <li class="nav-item">
+
+    <div align="center">  <a class="nav-link" href="./about"><h1>Egaints</h1> </a></div>
+
+  </li>
+
+</ul>
 </nav>
 
 <div class="container">
-  <ul class="nav nav-tabs">
-    <li><a href="./register"><h2>Personal Information</h2></a></li>
-    <li><a href="./edu"><h2>Educational Information</h2></a></li>
-    <li><a href="./immigration"><h2>Immigration Information</h2></a></li>
+  <ul class="nav nav-tabs nav-pills">
+    <li><a><h2>Personal Information</h2></a></li>
+    <li><a><h2>Educational Information</h2></a></li>
+    <li><a><h2>Immigration Information</h2></a></li>
     <li class="active"><a href="./work"><h2>Work Experience</h2></a></li>
   </ul>
-  <br >
-  <form #f="ngForm"
-        class="ui form">
-    <table>
-      <tr>
-        <td><label for="title"><h3>Title</h3></label>  </td>
-        <td>
-          <input type="text"
-                 id="title"
-                 name="title" ngModel>
-        </td>
-      </tr>
-      <br />
+  <br>
 
-      <tr>
-        <td><label for="title"><h3>Company</h3></label>  </td>
-        <td>
-          <input type="text"
-                 id="comp"
-                 name="comp" ngModel>
-        </td>
-      </tr>
-      <br />
+  <h5 align="left" class="col-sm-3 form-group">Immigration Details</h5>
 
-      <tr>
-        <td><label for="title"><h3>Location </h3></label>  </td>
-        <td>
-          <input type="text"
-                 id="loc"
-                 name="loc" ngModel>
-        </td>
-      </tr>
-      <br />
-      <tr>
-        <td>  <label><h3>From Date: </h3></label><br></td>
-        <td> <input id="dob" [(ngModel)]="from" type="date" name="from" ngModel></td>
+  <div class="container">
+    <div class="col-lg-12 well">
+      <div class="row">
+        <form>
 
-      </tr>
-      <br />
-      <tr>
-        <td>  <label><h3>To Date: </h3></label><br></td>
-        <td> <input id="dob" [(ngModel)]="to" type="date" name="to" ngModel></td>
+          <div class="col-sm-12 form-group">
+            <label>Total Years of Work Experience</label>
+            <input type="text" placeholder="Title" class="form-control" name="Title" ngModel>
+          </div>
 
-      </tr>
-      <tr>
-        <label for="ex3"><h3>Are you currently working here</h3></label>
-        <br>
-        <label class="radio-inline">
-          <input type="radio" name="survey" id="Radios1" value="Yes" ngModel>
-          Yes
-        </label>
-        <label class="radio-inline">
+          <div class="col-sm-12 form-group">
+            <label>Field of Previous work Experience</label>
+            <input type="text" placeholder="" class="form-control" name="Title" ngModel>
 
-          <input type="radio" name="survey" id="Radios2" value="No" ngModel>
-
-          No
-        </label>
-      </tr>
-      <br />
-    </table><br />
-    <form [formGroup]="addForm">
-      <div formArrayName="itemRows">
-
-        <div *ngFor="let itemrow of addForm.controls.itemRows.controls; let i=index" [formGroupName]="i">
+          </div>
 
 
-          <table>
-            <tr>
-              <td><label for="title">Title </label>  </td>
-              <td>
-                <input type="text"
-                       id="title"
-                       name="title" ngModel>
-              </td>
-            </tr>
-            <br />
-
-            <tr>
-              <td><label for="title">Company </label>  </td>
-              <td>
-                <input type="text"
-                       id="comp"
-                       name="comp" ngModel>
-              </td>
-            </tr>
-            <br />
-
-            <tr>
-              <td><label for="title">Location </label>  </td>
-              <td>
-                <input type="text"
-                       id="loc"
-                       name="loc" ngModel>
-              </td>
-            </tr>
-            <br />
-            <tr>
-              <td>  <label>From</label><br></td>
-              <td> <input id="dob" [(ngModel)]="from" type="date" name="from" ngModel></td>
-
-            </tr>
-            <br />
-            <tr>
-              <td>  <label>To</label><br></td>
-              <td> <input id="dob" [(ngModel)]="to" type="date" name="to" ngModel></td>
-
-            </tr>
-            <tr>
-              <label for="ex3">Are you currently working here</label>
-              <br>
-              <label class="radio-inline">
-                <input type="radio" name="survey" id="Radios1" value="Yes" ngModel>
-                Yes
-              </label>
-              <label class="radio-inline">
-
-                <input type="radio" name="survey" id="Radios2" value="No" ngModel>
-
-                No
-              </label>
-            </tr>
-            <br />
-          </table><br />
-
-         
-          <button type="button" (click)="deleteRow()" class="btn btn-primary">Delete Entry</button>
-        </div>
+        </form>
       </div>
-      <button type="button" (click)="addNewRow()" class="btn btn-primary">Add Entry</button>
-    </form>
-
-
-    <div align="right">
-      <a href="./immigration">
-        <button id="button" type="button" class="btn btn-info">Back</button>
-      </a>
-
-
-      <a>
-
-        <button id="btn-signup" type="button" class="btn btn-info">Save</button>
-
-      </a>
-      <a href="./login">
-        <button id="button" type="button" class="btn btn-info">submit</button>
-
-
-      </a>
     </div>
+  </div>
+
+
+  <h5 align="left" class="col-sm-3 form-group">Company Details</h5>
+
+  <div class="container">
+    <div class="col-lg-12 well">
+      <div class="row">
+        <form>
+          <div class="col-sm-6 form-group">
+            <label>Company Name</label>
+            <input type="text" placeholder="Title" class="form-control" name="Title" ngModel>
+          </div>
+
+          <div class="col-sm-6 form-group">
+            <label>Start Date</label>
+            <input type="date" placeholder="Date" class="form-control" name="Date" ngModel>
+
+          </div>
+
+
+          <div class="col-sm-6 form-group">
+            <label>Company Location </label>
+            <input type="text" placeholder="Company Name" class="form-control" name="Company Name" ngModel>
+          </div>
 
 
 
-    <style>
+          <div class="col-sm-6 form-group">
+            <label>Upload Work Experience Letter or Offer Letter</label>
 
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: white;
-        color: blue;
-        text-align: center;
-      }
-    </style>
-    <div class="footer">
-      <p>Add copyright policy</p>
+            <input type="file" placeholder="Passport" class="form-control">
+          </div>
+
+
+
+          <div class="col-sm-6 form-group">
+            <label>Start Date</label>
+            <input type="date" placeholder="Date" class="form-control" name="Date" ngModel>
+
+          </div>
+
+        </form>
+
+
+      </div>
     </div>
+  </div>
+
+
+
+
+
+  <div align="right">
+    <a href="./immigration">
+      <button id="button" type="button" class="btn btn-info">Back</button>
+    </a>
+
+
+    <a>
+
+      <button type="submit" class="ui button" (click)="onSubmit(f.value)">Save</button>
+
+    </a>
+
+    <a href="./login">
+
+
+      <button id="button" type="button" class="btn btn-info">Next</button>
+
+
+    </a>
+  </div>
+
+  <style>
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      color: blue;
+      text-align: center;
+    }
+  </style>
+  <div class="footer">
+    <p>Add copyright policy</p>
+  </div>

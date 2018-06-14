@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImmigrationComponent implements OnInit {
 
+  onSubmit(form: any): void {
+    console.log('you submitted value:', form);
+
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
-
+  countries = [" ", "USA", "UK", "India"];
 }
